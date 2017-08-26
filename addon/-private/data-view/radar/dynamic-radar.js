@@ -71,6 +71,8 @@ export default class DynamicRadar extends Radar {
 
     const maxIndex = totalItems - 1;
 
+    debugger
+
     let firstItemIndex = middleItemIndex - Math.floor(totalComponents / 2);
     let lastItemIndex = middleItemIndex + Math.ceil(totalComponents / 2) - 1;
 

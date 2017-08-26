@@ -27,6 +27,8 @@ export default class VirtualComponent {
     stripInProduction(() => {
       Object.preventExtensions(this);
     });
+
+    console.log('Virtual component is created');
   }
 
   get realUpperBound() {

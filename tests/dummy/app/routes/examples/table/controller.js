@@ -1,31 +1,35 @@
 import Ember from 'ember';
+
 const {
-  Controller
+  Controller,
+  computed
 } = Ember;
+
+const COLUMN_COUNT = 26;
+const ROW_COUNT = 100;
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 export default Controller.extend({
   rows: computed(function() {
     const arr = [];
-    for (let i = )
+    for (let i = 0; i < ROW_COUNT; i++) {
+      const obj = Ember.Object.create({});
+      for (let j = 0; j < COLUMN_COUNT; j++) {
+        obj.set(ALPHABET[j % 26], ALPHABET[j % 26]);
+      }
+      arr.push(obj);
+    }
     return arr;
   }),
 
   columns: computed(function() {
-    const arr = emberA();
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const arr = [];
     const columnWidth = 180;
 
-    arr.pushObject(EmberObject.create({
-      columnName: 'Column id',
-      valuePath: 'id',
-      isFixedColumn: true,
-      width: columnWidth
-    }));
-
-    for (let j = 0; j < 10; j++) {
-      arr.pushObject(EmberObject.create({
-        columnName: `Col ${alphabet[j % 26]}`,
-        valuePath: alphabet[j % 26],
+    for (let j = 0; j < COLUMN_COUNT; j++) {
+      arr.push(Ember.Object.create({
+        columnName: `Col ${ALPHABET[j % 26]}`,
+        valuePath: ALPHABET[j % 26],
         width: columnWidth
       }));
     }

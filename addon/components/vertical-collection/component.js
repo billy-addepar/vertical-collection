@@ -212,6 +212,7 @@ const VerticalCollection = Component.extend({
     this._super();
 
     this.token = new Token();
+
     const RadarClass = this.staticHeight ? StaticRadar : DynamicRadar;
 
     const items = this.get('items') || [];
