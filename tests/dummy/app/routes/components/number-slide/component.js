@@ -28,6 +28,11 @@ export default Component.extend({
   attributeBindings: ['style'],
   isDynamic: false,
   prefixed: false,
+
+  didInsertElement() {
+    console.log('aaaaa');
+  },
+
   style: computed('isDynamic', 'item', function() {
     let item = this.get('item');
     let isDynamic = this.get('isDynamic');
