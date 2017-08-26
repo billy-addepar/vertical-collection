@@ -266,7 +266,7 @@ export default class Radar {
     } = this;
 
     // Add components to be recycled to the pool
-    while (orderedComponents.length > 0 && orderedComponents[0].index < renderedFir tItemIndex) {
+    while (orderedComponents.length > 0 && orderedComponents[0].index < renderedFirstItemIndex) {
       _componentPool.push(orderedComponents.shift());
     }
 

@@ -1,13 +1,23 @@
 <div class="demo-container">
 
   {{#vc-table}}
+
+    <thead>
+      <tr>
+        {{#each columns as |column columnIndex|}}
+          <th>
+            Col {{columnIndex}}
+          </th>
+        {{/each}}
+      </tr>
+    </thead>
+
     <div class="et2-body-outer-wrapper" >
       <div class="et2-body-inner-wrapper">
 
         {{#vertical-collection
           items=rows
-          estimateHeight=40
-          bufferSize=20
+          estimateHeight=20
           containerSelector=".et2-body-outer-wrapper"
           tagName="tbody"
           as |rows index|

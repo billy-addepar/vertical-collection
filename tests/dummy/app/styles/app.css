@@ -251,7 +251,11 @@ vertical-item {
   overflow-x: auto;
 }
 
-td {
+th {
+  background: #00ff00;
+}
+
+table, td {
   border: black solid 1px;
   width: 180px;
 }
